@@ -36,6 +36,18 @@
 # brainstorm_output: html        # md | html (default: md)
 # ideate_output: md              # md | html (default: html -- ideation docs are human-facing, so HTML is the default; set md to opt out)
 
+# --- Fable elevation (Claude Code only) ---
+# Claude Code ONLY; silently ignored on every other harness (Codex, Cursor, ...).
+# When on, /ce-plan and /ce-brainstorm dispatch their reasoning-heavy step (plan
+# authoring; approach generation) to the Fable model via a subagent, so you get
+# higher-reasoning output even when your session model is cheaper -- no session
+# switch. Per-skill so you can enable one without the other. You can also just
+# say "use fable" in a prompt for a one-off. Invalid/commented/missing -> off.
+
+# plan_use_fable: true           # true | false (default: false)
+# brainstorm_use_fable: true     # true | false (default: false)
+# fable_nudge: false             # true | false (default: true -- one-time tip when elevation is available but off)
+
 # --- PR concept teaching (ce-commit-push-pr) ---
 # When a PR introduces a concept new to the codebase, the generated PR
 # description gains a "New concepts" section teaching it. The section toggle is

@@ -211,6 +211,8 @@ Follow the Interaction Rules above. Use the platform's blocking question tool wh
 
 ### Phase 2: Explore Approaches
 
+**Reasoning elevation (Claude Code only).** Before generating approaches, if positively Claude Code (`CLAUDECODE=1`, not Cursor/Codex), load `references/reasoning-elevation.md` and follow it — it may dispatch approach generation to a higher-reasoning model when the user has opted in, and it owns the completion-time discoverability tip. On any non-Claude host, skip it entirely — proceed on the session model with no mention. If a prompt names a model this skill does not recognize on this harness, proceed on the session model without comment.
+
 If multiple plausible directions remain, propose **2-3 concrete approaches** based on research and conversation. Otherwise state the recommended direction directly.
 
 Use at least one non-obvious angle — inversion (what if we did the opposite?), constraint removal (what if X weren't a limitation?), or analogy from how another domain solves this. The first approaches that come to mind are usually variations on the same axis. Hold each approach to an anti-genericness test: if it would appear in a generic listicle for this problem category, sharpen it against the grounding dossier or drop it.
