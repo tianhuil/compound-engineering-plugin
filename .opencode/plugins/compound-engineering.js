@@ -19,7 +19,7 @@ function loadSkills() {
       if (!m) continue
       const name = m[1]
       commands[name] = {
-        template: `Execute the "${name}" skill.`,
+        template: `Execute the "${name}" skill.\n\nTask: $ARGUMENTS`,
       }
     }
   } catch {}
@@ -36,7 +36,11 @@ export const CompoundEngineeringPlugin = async () => ({
       config.skills.paths.push(skillsDir)
     }
     config.command = config.command || {}
-    Object.assign(config.command, skillCommands)
+    for (const [name, cmd] of Object.entries(skillCommands)) {
+      if (!(name in config.command)) {
+        config.command[name] = cmd
+      }
+    }
   },
 })
 
